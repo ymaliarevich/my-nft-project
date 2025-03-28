@@ -1,0 +1,60 @@
+.container {
+    padding: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nft-image {
+    max-width: 180px;
+    max-height: 160px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.nft-info {
+    text-align: center;
+}
+
+.nft-info h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.nft-info p {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #555;
+}
+
+.token-id {
+    font-size: 12px;
+    color: #999;
+}
