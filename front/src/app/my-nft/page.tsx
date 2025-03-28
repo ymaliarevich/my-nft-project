@@ -87,7 +87,7 @@ export default function MyNFTPage() {
             <h1 className="title">🖼 Мои NFT</h1>
 
             {!wallet ? (
-                <button onClick={connectWallet}>🔌 Подключить MetaMask</button>
+                <button onClick={connectWallet}>Setup Metamask</button>
             ) : loading ? (
                 <p>Загружаю NFT...</p>
             ) : (
@@ -102,7 +102,7 @@ export default function MyNFTPage() {
                             </div>
                         </div>
                     ))}
-                    {nfts.length === 0 && <p>У тебя пока нет NFT 😔</p>}
+                    {nfts.length === 0 && <p>You dont have NFT 😔</p>}
                 </div>
             )}
         </main>

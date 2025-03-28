@@ -41,15 +41,13 @@ export default function MintPage() {
             const tx = await contract.safeMintTo(wallet)
             const receipt = await tx.wait()
 
-            // ✅ Получаем tokenId из события Transfer с типом Log
             const transferLog = receipt.logs.find((log: Log) =>
                 log.topics[0] === ethers.id('Transfer(address,address,uint256)')
             )
 
-            if (!transferLog) throw new Error('Transfer event not найден')
+            if (!transferLog) throw new Error('Transfer event not found')
             const tokenId = Number(BigInt(transferLog.topics[3]))
 
-            // ✅ Загружаем metadata
             const tokenUri = await contract.tokenURI(tokenId)
             const metadataUrl = tokenUri.replace('ipfs://', 'https://ipfs.io/ipfs/')
             const metadata = await fetch(metadataUrl).then((res) => res.json())
@@ -62,10 +60,10 @@ export default function MintPage() {
                 description: metadata.description || '',
             })
 
-            setStatus('✅ Минт завершён')
+            setStatus('Mint finished')
         } catch (err) {
             console.error(err)
-            setStatus('❌ Ошибка минта')
+            setStatus('Mint failed')
         }
     }
 
@@ -92,10 +90,10 @@ export default function MintPage() {
             <h1 className="title">Mint NFT</h1>
 
             {!wallet ? (
-                <button onClick={connectWallet}>🔌 Подключить MetaMask</button>
+                <button onClick={connectWallet}>Setup Metamask</button>
             ) : (
                 <>
-                    <p className="wallet">Кошелёк: {wallet}</p>
+                    <p className="wallet">Wallet: {wallet}</p>
                     <button onClick={handleMint}>🎨 Mint NFT</button>
                     <p className="status">{status}</p>
 
