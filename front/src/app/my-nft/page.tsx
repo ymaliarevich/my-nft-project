@@ -102,7 +102,7 @@ export default function MyNFTPage() {
                             </div>
                         </div>
                     ))}
-                    {nfts.length === 0 && <p>You dont have NFT 😔</p>}
+                    {nfts.length === 0 && <p>You dont have NFT</p>}
                 </div>
             )}
         </main>

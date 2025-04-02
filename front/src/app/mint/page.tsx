@@ -37,7 +37,7 @@ export default function MintPage() {
         const contract = getContract(signer)
 
         try {
-            setStatus('⏳ Минтинг...')
+            setStatus('Minting...')
             const tx = await contract.safeMintTo(wallet)
             const receipt = await tx.wait()
 
